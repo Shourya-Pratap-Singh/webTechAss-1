@@ -1,0 +1,548 @@
+/* =============================================
+   style.css – Personal Website: Shourya Pratap Singh
+   Multi-page version
+   ============================================= */
+
+/* ---- Google Font ---- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ---- CSS Variables ---- */
+:root {
+  --blue-dark:   #1a3c6e;
+  --blue-main:   #2563eb;
+  --blue-light:  #eff6ff;
+  --blue-border: #bfdbfe;
+  --white:       #ffffff;
+  --text-dark:   #1e293b;
+  --text-muted:  #64748b;
+  --section-bg:  #f8fafc;
+  --nav-height:  64px;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--white);
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--blue-main);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =============================================
+   NAVIGATION BAR
+   ============================================= */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background-color: var(--blue-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.nav-brand {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 6px;
+}
+
+.nav-links li a {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: background 0.25s, color 0.25s;
+  text-decoration: none;
+  display: block;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background-color: var(--blue-main);
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* Hamburger (mobile) */
+.hamburger {
+  display: none;
+  color: var(--white);
+  font-size: 1.6rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Mobile dropdown menu */
+.mobile-menu {
+  display: none;
+  list-style: none;
+  background-color: var(--blue-dark);
+  padding: 10px 0;
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.mobile-menu li {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.mobile-menu li a {
+  color: #cbd5e1;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.mobile-menu li a:hover,
+.mobile-menu li a.active {
+  color: var(--white);
+}
+
+/* =============================================
+   HOME PAGE
+   ============================================= */
+.home-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, var(--blue-dark) 0%, var(--blue-main) 100%);
+  text-align: center;
+  padding: calc(var(--nav-height) + 40px) 20px 60px;
+  min-height: 100vh;
+}
+
+.home-content {
+  max-width: 680px;
+  padding: 20px;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid rgba(255, 255, 255, 0.4);
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.home-content h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.tagline {
+  font-size: 1.05rem;
+  color: #bfdbfe;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.intro {
+  font-size: 0.97rem;
+  color: #dbeafe;
+  margin-bottom: 20px;
+}
+
+.objective-box {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.objective-box h3 {
+  color: #93c5fd;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.objective-box p {
+  color: #e0f2fe;
+  font-size: 0.93rem;
+}
+
+/* =============================================
+   INNER PAGES (Bio-data / Resume / Contact)
+   ============================================= */
+.page-main {
+  flex: 1;
+  padding: calc(var(--nav-height) + 50px) 20px 60px;
+  background-color: var(--section-bg);
+}
+
+.section-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: var(--blue-main);
+  border-radius: 2px;
+  margin-top: 6px;
+}
+
+/* =============================================
+   BUTTON
+   ============================================= */
+.btn {
+  display: inline-block;
+  background-color: var(--white);
+  color: var(--blue-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 30px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s, transform 0.2s;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn:hover {
+  background-color: #dbeafe;
+  color: var(--blue-dark);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* =============================================
+   BIO-DATA TABLE
+   ============================================= */
+.bio-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.bio-table th,
+.bio-table td {
+  border: 1px solid var(--blue-border);
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.bio-table th {
+  background-color: var(--blue-dark);
+  color: var(--white);
+  font-weight: 500;
+  width: 200px;
+}
+
+.bio-table tr:nth-child(even) td {
+  background-color: var(--blue-light);
+}
+
+.bio-table tr:hover td {
+  background-color: #dbeafe;
+}
+
+/* =============================================
+   RESUME SECTION
+   ============================================= */
+.resume-block {
+  margin-bottom: 36px;
+}
+
+.resume-block h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--blue-dark);
+  border-left: 4px solid var(--blue-main);
+  padding-left: 12px;
+  margin-bottom: 16px;
+}
+
+.resume-block p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Education table */
+.edu-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.edu-table th,
+.edu-table td {
+  border: 1px solid var(--blue-border);
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.edu-table thead th {
+  background-color: var(--blue-dark);
+  color: var(--white);
+  font-weight: 500;
+}
+
+.edu-table tbody tr:nth-child(even) {
+  background-color: var(--blue-light);
+}
+
+.edu-table tbody tr:hover {
+  background-color: #dbeafe;
+}
+
+/* Skills list */
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+}
+
+.skills-list li {
+  background-color: var(--blue-light);
+  border: 1px solid var(--blue-border);
+  color: var(--blue-dark);
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 6px 16px;
+  border-radius: 20px;
+  transition: background 0.2s;
+}
+
+.skills-list li:hover {
+  background-color: var(--blue-main);
+  color: var(--white);
+  border-color: var(--blue-main);
+}
+
+/* Project cards */
+.project-card {
+  border: 1px solid var(--blue-border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 14px;
+  background: var(--white);
+}
+
+.project-card h4 {
+  font-size: 1rem;
+  color: var(--blue-main);
+  margin-bottom: 6px;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* =============================================
+   CONTACT PAGE
+   ============================================= */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 34px;
+  background: var(--white);
+  border: 1px solid var(--blue-border);
+  border-radius: 10px;
+  padding: 20px 24px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+  color: var(--blue-main);
+  width: 28px;
+  text-align: center;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--blue-border);
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.93rem;
+  color: var(--text-dark);
+  background: var(--white);
+  outline: none;
+  transition: border 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--blue-main);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* Error and success */
+.error-msg {
+  color: #dc2626;
+  font-size: 0.88rem;
+  margin-bottom: 10px;
+  min-height: 20px;
+}
+
+.success-msg {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+  background-color: var(--blue-dark);
+  color: #94a3b8;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.88rem;
+}
+
+/* =============================================
+   RESPONSIVE – MOBILE
+   ============================================= */
+@media (max-width: 700px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-brand {
+    font-size: 0.9rem;
+  }
+
+  #navbar {
+    padding: 0 20px;
+  }
+
+  .home-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .bio-table th {
+    width: 120px;
+    font-size: 0.83rem;
+  }
+
+  .bio-table td {
+    font-size: 0.83rem;
+  }
+
+  .bio-table th,
+  .bio-table td {
+    padding: 9px 10px;
+  }
+
+  .edu-table {
+    font-size: 0.78rem;
+  }
+
+  .edu-table th,
+  .edu-table td {
+    padding: 8px 8px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
